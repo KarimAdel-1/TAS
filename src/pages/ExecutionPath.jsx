@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { TableRow } from '../components/TableRow.jsx';
+import { TableRow } from '../components/TableRow';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
