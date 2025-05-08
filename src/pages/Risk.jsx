@@ -2,9 +2,11 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import quote from '/assets/quote.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowTrendDown } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowTrendDown,
+  faCircleExclamation,
+} from '@fortawesome/free-solid-svg-icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,10 +54,10 @@ export const Risk = () => {
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         {/* Header */}
         <div className="space-y-4 fade-text">
-          <p className="text-blue-600 text-lg font-mono uppercase">
+          <p className="text-[#0F8DCD] text-lg font-mono uppercase">
             Why It Matters
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
+          <h2 className=" text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
             What’s At Risk ?
           </h2>
         </div>
@@ -63,7 +65,7 @@ export const Risk = () => {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Left Column */}
-            <div className="bg-red-100/30 border border-red-200 rounded-xl shadow p-6 flex flex-col gap-10 w-full fade-card">
+            <div className="bg-red-100/30 border border-red-200 rounded-xl shadow p-6 flex flex-col gap-10 w-full fade-card ">
               {[
                 {
                   title: 'Lost Leads',
@@ -84,14 +86,18 @@ export const Risk = () => {
               ].map((item, index) => (
                 <React.Fragment key={index}>
                   <div className="flex gap-4 items-start">
-                    <div className="bg-red-200/30 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-red-500 text-xl sm:text-2xl font-medium">
-                      !
-                    </div>
+                    <FontAwesomeIcon
+                      icon={faCircleExclamation}
+                      className="text-xl md:text-2xl lg:text-3xl xl:text-4xl bg-red-900 rounded-full text-[#FBD0CF]"
+                    />
                     <div>
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">
+                      <h3
+                        className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold"
+                      >
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 font-mono text-sm sm:text-base mt-2">
+                      <p className="text-gray-600 text-sm md:text-base lg:text-lg xl:text-xl mt-2 font-mono">
                         {item.desc}
                       </p>
                     </div>
@@ -103,11 +109,17 @@ export const Risk = () => {
             {/* Right Column */}
             <div className="flex flex-col gap-10 w-full">
               <div className="p-6 border border-gray-300 rounded-xl shadow fade-card">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                <h3
+                  className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold mb-2"
+                >
                   The Business Impact
                 </h3>
                 <div className="w-full h-[1px] bg-gray-200 mb-4" />
-                <p className="text-gray-600 font-mono text-sm sm:text-base">
+                <p
+                  className="text-gray-600 text-sm md:text-base lg:text-lg xl:text-xl
+font-mono"
+                >
                   This perception gap has real business consequences, potential
                   clients might choose competitors for RFQs, new route planning
                   excludes TAS from consideration, and pricing leverage is
@@ -117,7 +129,10 @@ export const Risk = () => {
               </div>
 
               <div className="fade-card">
-                <h4 className="text-lg sm:text-xl font-bold mb-4">
+                <h4
+                  className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold mb-4"
+                >
                   Impact flow
                 </h4>
                 <div className="flex flex-col gap-6">
@@ -128,10 +143,10 @@ export const Risk = () => {
                     'Lost Business Value',
                   ].map((step, index) => (
                     <div key={step} className="flex items-center gap-4">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-semibold">
+                      <div className="p-5 w-12 h-12 sm:w-10 sm:h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-semibold">
                         {index + 1}
                       </div>
-                      <div className="text-base sm:text-lg font-semibold bg-gray-100 px-4 py-1 w-full ">
+                      <div className="text-sm md:text-base lg:text-lg xl:text-xl bg-gray-100 px-4 py-1 w-full ">
                         <span>{step}</span>
                       </div>
                     </div>
@@ -144,13 +159,20 @@ export const Risk = () => {
             <div className="flex items-center gap-4">
               <FontAwesomeIcon
                 icon={faArrowTrendDown}
-                className="text-2xl text-[#0F8DCD]"
+                className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ text-[#0F8DCD]"
               />
-              <div className="text-black font-bold text-2xl">
+              <div
+                className="text-black text-xl md:text-2xl lg:text-3xl xl:text-4xl
+                font-bold"
+              >
                 You're losing clients silently
               </div>
             </div>
-            <p className="text-black font-be-vietnam-regular text-xl">
+            <p
+              className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+            >
               Not because of your service, but because your digital presence
               doesn't build trust fast enough. You're seen as a vendor, not a
               strategic partner.

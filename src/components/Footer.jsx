@@ -62,7 +62,10 @@ const Footer = () => {
           <div className="grid grid-cols-2 grid-rows-2 gap-y-5 justify-between w-full">
             {footerSections.map((section, index) => (
               <div key={index} className="flex flex-col items-start">
-                <h3 className="font-general text-xs md:text-xl text-white/60 uppercase mb-3 font-mono">
+                <h3
+                  className="text-sm md:text-base lg:text-lg xl:text-xl
+ text-white/60 uppercase mb-3 font-mono"
+                >
                   {section.title}
                 </h3>
                 {section.links.map((link, linkIndex) => (
@@ -72,7 +75,8 @@ const Footer = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="md:text-lg font-mono text-white flex items-center gap-2 pb-1 w-fit"
+                        className="text-sm md:text-base lg:text-lg xl:text-xl
+ font-mono text-white flex items-center gap-2 pb-1 w-fit"
                       >
                         {link.icon && link.icon}
                         {link.label}
@@ -83,7 +87,8 @@ const Footer = () => {
                         onClick={(e) =>
                           scrollToSection(e, formatId(link.label))
                         }
-                        className="md:text-lg font-mono text-white flex items-center gap-2 pb-1 w-fit cursor-pointer"
+                        className="text-sm md:text-base lg:text-lg xl:text-xl
+ font-mono text-white flex items-center gap-2 pb-1 w-fit cursor-pointer"
                       >
                         {link.icon && link.icon}
                         {link.label}
@@ -97,11 +102,15 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-evenly w-full text-[11px] md:gap-10 md:justify-between md:text-sm flex-col gap-2 border-t border-white/10 pt-4 mt-4">
-          <p className="my-auto text-white/60 font-mono uppercase">
+          <p
+            className="my-auto text-sm md:text-base lg:text-lg xl:text-xl
+ text-white/60 font-mono uppercase"
+          >
             Copyright © 2025 Beily Design Consultancy. All rights reserved.
           </p>
           <a
-            className="text-white/60 font-mono cursor-pointer uppercase"
+            className="text-white/60 font-mono cursor-pointer uppercase text-sm md:text-base lg:text-lg xl:text-xl
+"
             href="#"
           >
             Privacy Policy

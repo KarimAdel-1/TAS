@@ -121,14 +121,14 @@ const ScrollZoom = () => {
                 alt="Company Logo"
               />
               <div className="flex flex-col gap-1">
-                <p className="text-[11px] md:text-sm text-[#0F8DCD] font-mono uppercase">
+                <p className="text-[#0F8DCD] text-lg font-mono uppercase">
                   COMPANY OVERVIEW
                 </p>
-                <p className="text-xl md:text-4xl font-bold text-black">
+                <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
                   Tiger Aviation Services
                 </p>
               </div>
-              <p className="text-sm md:text-xl text-black">
+              <p className=" text-lg md:text-xl lg:text-2xl xl:text-3xl text-black">
                 Tiger Aviation Services has established itself as one of Egypt's
                 premier ground handling providers, delivering consistent quality
                 and safety.
@@ -143,14 +143,19 @@ const ScrollZoom = () => {
                   'OPERATING LOCATIONS',
                   'CERTIFICATIONS',
                 ].map((item, idx) => (
-                  <p
-                    key={idx}
-                    className={`md:text-sm tracking-widest text-white text-sm py-4 font-mono uppercase ${
+                  <div
+                    className={`flex items-center gap-2 py-4  ${
                       idx < 3 ? 'border-b-3 border-gray-300 border-dotted' : ''
-                    }`}
+                    } `}
                   >
-                    {item}
-                  </p>
+                    <p
+                      key={idx}
+                      className={` text-xs md:text-sm lg:text-md xl:text-lg
+                      tracking-widest text-white text-sm py-3 font-mono uppercase`}
+                    >
+                      {item}
+                    </p>
+                  </div>
                 ))}
               </div>
 
@@ -162,7 +167,7 @@ const ScrollZoom = () => {
                   'ISAGO-certified & NBAA member',
                 ].map((desc, idx) => (
                   <div
-                    className={`flex items-center gap-2 py-4 ${
+                    className={`flex items-center gap-2 py-4  ${
                       idx < 3 ? 'border-b-3 border-gray-300 border-dotted' : ''
                     } `}
                     key={idx}
@@ -171,7 +176,11 @@ const ScrollZoom = () => {
                       icon={faCircleCheck}
                       className="text-[#0F8DCD] text-lg md:text-2xl"
                     />
-                    <p className="text-black/60 text-sm md:text-sm tracking-widest font-mono uppercase">
+                    <p
+                      // key={idx}
+                      className={`text-black/60 text-xs md:text-sm lg:text-md xl:text-lg
+ tracking-widest text-sm py-3 font-mono uppercase`}
+                    >
                       {desc}
                     </p>
                   </div>
@@ -194,10 +203,16 @@ const ScrollZoom = () => {
         {/* <section className="w-full h-screen bg-gradient-to-b from-blue-500 to-blue-700"></section> */}
         <section className="w-full h-screen bg-[url('/assets/cloudBackground.png')] bg-no-repeat bg-cover bg-center flex items-center justify-center w-full py-24 px-4 sm:px-10 md:px-20 xl:px-36 h-full">
           <div className="flex flex-col items-center justify-center text-center gap-4">
-            <p className="text-[#010F65] text-4xl md:text-[78px] font-bold">
+            <p
+              className="text-[#010F65] text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+ font-bold"
+            >
               Ready to Transform TAS's Digital Presence?
             </p>
-            <p className="text-[#010F65] text-[30] md:text-[38px]">
+            <p
+              className="text-[#010F65] text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+            >
               Let's build a website that truly represents TAS's leadership
               position in aviation ground handling services.
             </p>
@@ -215,10 +230,13 @@ const ScrollZoom = () => {
         />
         <div
           ref={lottieRef}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-100 flex items-center flex-col gap-3"
+          className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-100 flex items-center flex-col gap-3"
         >
           <Lottie animationData={scrollAnimation} loop className="w-10 h-10" />
-          <span className="text-white uppercase tracking-widest">
+          <span
+            className="text-white uppercase tracking-widest text-xs md:text-sm lg:text-md xl:text-lg
+"
+          >
             Scroll to start
           </span>
         </div>

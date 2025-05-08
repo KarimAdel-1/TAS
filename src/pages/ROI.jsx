@@ -49,8 +49,8 @@ export const ROI = () => {
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="space-y-4 fade-text">
-          <p className="text-blue-600 text-lg font-mono uppercase">ROI</p>
-          <h2 className="text-2xl md:text-4xl font-bold text-black leading-tight">
+          <p className="text-[#0F8DCD] text-lg font-mono  uppercase">ROI</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
             Business Impact
           </h2>
         </div>
@@ -65,12 +65,15 @@ export const ROI = () => {
                 alt="Annual Planning Cycles"
                 src={document}
               />
-              <div className="font-bold text-2xl md:text-3xl">
-                Lead Generation & Conversion
+              <div
+                className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+              >
+                Lead Generation
               </div>
             </div>
             <div className="h-[1px] bg-gray-300 w-32 md:w-86 md:w-86 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p className="text-black text-sm md:text-base lg:text-lg xl:text-xl">
               Strategic design and clear calls-to-action will drive more
               qualified inquiries.
             </p>
@@ -79,10 +82,15 @@ export const ROI = () => {
           <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col gap-3">
             <div className="flex items-center gap-4">
               <img className="w-16 h-16" alt="Emergency Response" src={clock} />
-              <div className="font-bold text-2xl">Faster Deal Cycles</div>
+              <div
+                className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+              >
+                Faster Deal Cycles
+              </div>
             </div>
             <div className="h-[1px] bg-gray-300  w-32 md:w-86 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p className="text-black text-sm md:text-base lg:text-lg xl:text-xl">
               Clear information and trust signals reduce buyer hesitation and
               questions.
             </p>
@@ -92,12 +100,15 @@ export const ROI = () => {
           <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col gap-3">
             <div className="flex items-center gap-4">
               <img className="w-16 h-16" alt="Network Expansion" src={home} />
-              <div className="font-bold text-2xl">
+              <div
+                className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+              >
                 Brand Value & Premium Positioning
               </div>
             </div>
             <div className="h-[1px] bg-gray-300  w-32 md:w-86 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p className="text-black text-sm md:text-base lg:text-lg xl:text-xl">
               Professional digital presence supports premium pricing and client
               acquisition and retention.
             </p>
@@ -110,33 +121,43 @@ export const ROI = () => {
                 alt="Digital Evaluation"
                 src={computer}
               />
-              <div className="font-bold text-2xl">Operational Efficiency</div>
+              <div
+                className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+              >
+                Operational Efficiency
+              </div>
             </div>
             <div className="h-[1px] bg-gray-300  w-32 md:w-86 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p className="text-black text-sm md:text-base lg:text-lg xl:text-xl">
               Your OPS team gain more confidence, gets clearer communication and
               better-qualified leads, cutting wasted time.
             </p>
           </div>
         </div>
 
-        <div className="mx-auto gap-5 flex flex-col mt-6">
-          <div className="bg-white rounded-xl border border-gray-200 shadow-md ">
-            <div className="bg-[#010F65] text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-t py-4">
+        <div className="mx-auto gap-5 flex flex-col mt-6 ">
+          <div className="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col gap-3">
+            <div className="bg-[#010F65] text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl px-4 py-2 rounded-t py-4 font-bold">
               Business Impact Projections
             </div>
-            <div className="bg-white px-4 py-4 space-y-4 rounded-b">
+            <div className=" px-4 py-4 space-y-4">
               {data.map((item, idx) => (
                 <div key={idx} className="space-y-1">
                   <div className="flex justify-between font-medium text-sm">
-                    <span className="text-base md:text-lg">{item.label}</span>
-                    <span className="text-[#0F8DCD] text-base md:text-lg font-bold">
+                    <span
+                      className="text-sm md:text-base lg:text-lg xl:text-xl
+"
+                    >
+                      {item.label}
+                    </span>
+                    <span className="text-[#0F8DCD] text-sm md:text-base lg:text-lg xl:text-xl font-bold">
                       {item.value}
                     </span>
                   </div>
                   <div className="w-full bg-blue-100 h-1.5 rounded">
                     <div
-                      className="bg-[#0F8DCD] h-1.5 rounded"
+                      className="bg-[#0F8DCD] h-1.5 rounded "
                       style={{ width: `${item.percent}%` }}
                     />
                   </div>
@@ -151,17 +172,22 @@ export const ROI = () => {
               <div
                 className={`bg-[#010F65] h-1.5 w-16 rounded-full transition-all duration-300 group-hover:w-24`}
               />
-              <h3 className="text-black text-2xl font-bold mb-2">
+              <h3
+                className="text-black text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold mb-2"
+              >
                 Short-Term Returns
               </h3>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 items-start justify-start">
                 {returns.short.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 ">
+                  <li key={i} className="flex items-start gap-2">
                     <FontAwesomeIcon
                       icon={faCheckCircle}
-                      className="text-[#010F65] text-base md:text-xl"
+                      className="text-[#010F65] text-sm md:text-base lg:text-lg xl:text-xl mt-1"
                     />
-                    <span className="text-base">{item}</span>
+                    <span className="text-sm md:text-base lg:text-lg xl:text-xl">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -172,17 +198,22 @@ export const ROI = () => {
               <div
                 className={`bg-[#0F8DCD] h-1.5 w-16 rounded-full transition-all duration-300 group-hover:w-24`}
               />
-              <h3 className="ttext-black text-2xl font-bold mb-2">
+              <h3
+                className="ttext-black text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold mb-2"
+              >
                 Med-Term Returns
               </h3>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2">
                 {returns.mid.map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <FontAwesomeIcon
                       icon={faCheckCircle}
-                      className="text-[#0F8DCD] text-base md:text-xl"
+                      className="text-[#0F8DCD] text-sm md:text-base lg:text-lg xl:text-xl mt-1"
                     />
-                    <span>{item}</span>
+                    <span className="text-sm md:text-base lg:text-lg xl:text-xl">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -193,17 +224,22 @@ export const ROI = () => {
               <div
                 className={`bg-orange-500 h-1.5 w-16 rounded-full transition-all duration-300 group-hover:w-24`}
               />
-              <h3 className="text-black text-2xl font-bold mb-2">
+              <h3
+                className="text-black text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold mb-2"
+              >
                 Long-Term Returns
               </h3>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2">
                 {returns.long.map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <FontAwesomeIcon
                       icon={faCheckCircle}
-                      className="text-orange-500 text-base md:text-xl"
+                      className="text-orange-500 text-sm md:text-base lg:text-lg xl:text-xl mt-1"
                     />
-                    <span>{item}</span>
+                    <span className="text-sm md:text-base lg:text-lg xl:text-xl">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -214,11 +250,20 @@ export const ROI = () => {
           <div className="flex items-center gap-4">
             <FontAwesomeIcon
               icon={faArrowTrendUp}
-              className="text-2xl text-[#0F8DCD]"
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ text-[#0F8DCD]"
             />
-            <span className="text-2xl font-bold">High ROI</span>
+            <span
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold"
+            >
+              High ROI
+            </span>
           </div>
-          <p className="text-black font-be-vietnam-regular text-xl">
+          <p
+            className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+          >
             Website investment pays for itself with acquisition of just one new
             medium-sized client. Additional leads represent pure ROI.
           </p>

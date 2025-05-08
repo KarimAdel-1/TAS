@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -67,10 +69,10 @@ export function ExecutionPath() {
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Header */}
         <div className="flex flex-col gap-4 fade-in justify-center items-center">
-          <h4 className="text-blue-600 text-xl font-mono uppercase">
+          <h4 className="text-[#0F8DCD] text-lg  font-mono uppercase">
             Execution Path
           </h4>
-          <h2 className="text-black text-4xl sm:text-5xl font-bold">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
             Webflow Build vs. Custom Build
           </h2>
         </div>
@@ -94,7 +96,8 @@ export function ExecutionPath() {
           />
           <button
             onClick={() => setActiveTab('webflow')}
-            className={`font-semibold relative z-10 px-10 py-2 transition-colors duration-200 ${
+            className={`text-lg md:text-xl lg:text-2xl xl:text-3xl
+relative z-10 px-10 py-2 transition-colors duration-200 ${
               activeTab === 'webflow' ? 'text-white' : 'text-gray-500'
             }`}
           >
@@ -102,9 +105,10 @@ export function ExecutionPath() {
           </button>
           <button
             onClick={() => setActiveTab('custom')}
-            className={`font-semibold relative z-10 px-6 py-2 transition-colors duration-200 ${
-              activeTab === 'custom' ? 'text-white' : 'text-gray-500'
-            }`}
+            className={`text-lg md:text-xl lg:text-2xl xl:text-3xl
+ relative z-10 px-6 py-2 transition-colors duration-200 ${
+   activeTab === 'custom' ? 'text-white' : 'text-gray-500'
+ }`}
           >
             Custom Code
           </button>
@@ -116,13 +120,13 @@ export function ExecutionPath() {
     ${
       activeTab === 'custom'
         ? 'border-[#F26430] bg-orange-50'
-        : 'border-[#0F8DCD] bg-[#E2F1FC]'
+        : 'border-[#010F65] bg-[#E2F1FC]'
     }`}
         >
           {features.map(({ label, value }, idx) => {
             const isLast = idx === features.length - 1;
             const borderColor =
-              activeTab === 'custom' ? 'border-[#f7a97a]' : 'border-[#7ac1f3]';
+              activeTab === 'custom' ? 'border-[#f7a97a]' : 'border-[#242b5e]';
 
             return (
               <div
@@ -131,15 +135,48 @@ export function ExecutionPath() {
                   !isLast ? `border-b ${borderColor}` : ''
                 }`}
               >
-                <span className="font-semibold text-base md:text-xl text-gray-700">
+                <span
+                  className="font-semibold text-sm md:text-base lg:text-lg xl:text-xl
+ text-gray-700"
+                >
                   {label}
                 </span>
-                <span className="font-mono text-base md:text-xl uppercase text-black/50">
+                <span
+                  className="font-mono text-sm md:text-base lg:text-lg xl:text-xl
+ uppercase text-black/50"
+                >
                   {value}
                 </span>
               </div>
             );
           })}
+        </div>
+        <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-10 flex flex-col gap-6">
+          <div className="flex items-center gap-4">
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+         text-[#0F8DCD]"
+            />
+            <div
+              className="text-black font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl
+        "
+            >
+              Our Recommendation
+            </div>
+          </div>
+          <p
+            className="text-black font-be-vietnam-regular text-xs md:text-sm lg:text-md xl:text-lg
+        "
+          >
+            <span>
+              Based on TAS's global presence, premium positioning, and long-term
+              growth plans, we recommend the 
+              <span className="font-bold text-[#0F8DCD]"> Custom Build </span>
+               approach for maximum flexibility and ownership. However, both
+              paths will deliver a professional, high-quality website.
+            </span>
+          </p>
         </div>
       </div>
     </section>

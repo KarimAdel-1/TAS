@@ -83,22 +83,12 @@ export const RiskTwo = () => {
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="space-y-4 fade-text">
-          <p className="text-blue-600 text-lg font-mono uppercase">
+          <p className="text-[#0F8DCD] text-lg font-mono uppercase">
             WEbsite Delivery
           </p>
-          <h2 className="text-2xl md:text-4xl font-bold text-black leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
             What A Strategic Website Actually Delivers
           </h2>
-        </div>
-
-        {/* Paragraph */}
-        <div className="fade-text">
-          <p className="text-lg md:text-xl text-black">
-            A proper site is not a brochure — it's your sales team, operations
-            showcase, and credibility engine. It works before the phone rings.
-            It proves capability, builds trust, and triggers action: Request
-            Handling. Get a Permit. Contact Ops.
-          </p>
         </div>
 
         {/* Cards */}
@@ -116,9 +106,19 @@ export const RiskTwo = () => {
                 />
               </div>
               <div className="p-3 space-y-4">
-                <h3 className="text-2xl font-bold">{card.title}</h3>
+                <h3
+                  className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold"
+                >
+                  {card.title}
+                </h3>
                 <div className="h-px w-full bg-gray-300" />
-                <p className="text-gray-700 text-base">{card.description}</p>
+                <p
+                  className="text-sm md:text-base lg:text-lg xl:text-xl
+ text-gray-700 text-base"
+                >
+                  {card.description}
+                </p>
               </div>
             </div>
           ))}
@@ -127,13 +127,20 @@ export const RiskTwo = () => {
           <div className="flex items-center gap-4">
             <FontAwesomeIcon
               icon={faRankingStar}
-              className="text-2xl text-[#0F8DCD]"
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ text-[#0F8DCD]"
             />
-            <div className="text-black font-bold text-2xl">
+            <div
+              className="text-black font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+            >
               A proper site is not a brochure
             </div>
           </div>
-          <p className="text-black font-be-vietnam-regular text-xl">
+          <p
+            className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+          >
             it's your sales team, operations showcase, and credibility engine.
             It works before the phone rings. It proves capability, builds trust,
             and triggers action: Request Handling. Get a Permit. Contact Ops.

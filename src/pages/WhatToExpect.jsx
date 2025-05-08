@@ -42,10 +42,10 @@ function WhatToExpect() {
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Header */}
         <div className="flex flex-col gap-2 fade-in">
-          <h4 className="text-sky-600 text-xl font-mono uppercase">
+          <h4 className="text-[#0F8DCD] text-lg  font-mono uppercase">
             What to Expect?
           </h4>
-          <h2 className="text-black text-4xl sm:text-5xl font-bold">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
             TAS New Website
           </h2>
         </div>
@@ -55,14 +55,27 @@ function WhatToExpect() {
           {/* WILL */}
           <div className="bg-[#E6E5FF] border border-blue-950 rounded-3xl flex flex-col gap-6">
             <div className="text-[#010F65] flex items-center justify-start gap-2 border-b py-4 px-6">
-              <FontAwesomeIcon icon={faCircleCheck} className="text-2xl" />
-              <h3 className="w-8 h-8 text-2xl md:text-3xl font-bold">WILL</h3>
+              <FontAwesomeIcon
+                icon={faCircleCheck}
+                className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mt-1
+"
+              />
+              <span
+                className="w-8 h-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold"
+              >
+                WILL
+              </span>
             </div>
-            <ul className="flex flex-col gap-4 text-lg px-6 py-4 items-start">
+            <ul
+              className="flex flex-col gap-4 text-sm md:text-base lg:text-lg xl:text-xl
+
+ px-6 py-4 items-start"
+            >
               <li className="flex gap-4 items-start">
                 <FontAwesomeIcon
                   icon={faCircleCheck}
-                  className="text-2xl text-[#010F65] pt-1 "
+                  className=" text-[#010F65] pt-1"
                 />
                 <span>
                   Build trust & credibility fast through strategic design and
@@ -72,7 +85,7 @@ function WhatToExpect() {
               <li className="flex gap-4 items-start justify-center">
                 <FontAwesomeIcon
                   icon={faCircleCheck}
-                  className="text-2xl text-[#010F65] pt-1 "
+                  className=" text-[#010F65] pt-1 "
                 />
                 <h3>
                   Strengthen brand reputation with professional presentation
@@ -81,14 +94,14 @@ function WhatToExpect() {
               <li className="flex gap-4 items-start justify-center">
                 <FontAwesomeIcon
                   icon={faCircleCheck}
-                  className="text-2xl text-[#010F65] pt-1"
+                  className=" text-[#010F65] pt-1"
                 />
                 <h3>Support lead generation & conversions</h3>
               </li>
               <li className="flex gap-4 items-start justify-center">
                 <FontAwesomeIcon
                   icon={faCircleCheck}
-                  className="text-2xl text-[#010F65] pt-1"
+                  className=" text-[#010F65] pt-1"
                 />
                 <h3>
                   Boost global discoverability through SEO and performance
@@ -100,15 +113,21 @@ function WhatToExpect() {
           {/* WON'T */}
           <div className="bg-orange-50 border border-[#F26430] rounded-3xl flex flex-col gap-6">
             <div className="text-[#F26430] flex items-center justify-start gap-2 border-b py-4 px-6">
-              <FontAwesomeIcon icon={faCircleXmark} className="text-2xl" />
-              <h3 className=" text-2xl md:text-3xl font-bold">WON'T</h3>
+              <FontAwesomeIcon
+                icon={faCircleXmark}
+                className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+              />
+              <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold">
+                WON'T
+              </h3>
             </div>
 
-            <ul className="flex flex-col gap-4 text-black text-lg px-6 py-4 items-start">
+            <ul className="flex flex-col gap-4 text-sm md:text-base lg:text-lg xl:text-xl px-6 py-4 items-start">
               <li className="flex gap-4 items-start justify-center">
                 <FontAwesomeIcon
                   icon={faCircleXmark}
-                  className="text-2xl text-[#F26430] pt-1"
+                  className="text-[#F26430] pt-1"
                 />
                 <h3>
                   Replace human sales efforts, customer handling, and
@@ -118,14 +137,14 @@ function WhatToExpect() {
               <li className="flex gap-4 items-start justify-center">
                 <FontAwesomeIcon
                   icon={faCircleXmark}
-                  className="text-2xl text-[#F26430] pt-1"
+                  className="text-[#F26430] pt-1"
                 />
                 <h3>Fix operational delivery issues or service gaps</h3>
               </li>
               <li className="flex gap-4 items-start justify-center">
                 <FontAwesomeIcon
                   icon={faCircleXmark}
-                  className="text-2xl text-[#F26430] pt-1"
+                  className="text-[#F26430] pt-1"
                 />
                 <h3>Eliminate need for ongoing content & SEO investment</h3>
               </li>
@@ -134,15 +153,24 @@ function WhatToExpect() {
         </div>
 
         {/* Footer Note */}
-        <div className="bg-sky-100 border border-sky-600 rounded-3xl p-6 flex flex-col gap-4 fade-in">
-          <h3 className="text-black font-bold flex items-center gap-2">
+        <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-10 flex flex-col gap-6">
+          <h3 className="text-black font-bold flex items-center gap-4">
             <FontAwesomeIcon
               icon={faClock}
-              className="text-2xl text-[#0F8DCD]"
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ text-[#0F8DCD]"
             />
-            <h3 className="text-2xl">Clear Expectations</h3>
+            <h3
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+            >
+              Clear Expectations
+            </h3>
           </h3>
-          <p className="text-black text-xl">
+          <p
+            className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+          >
             We're committed to transparent communication throughout the project.
             Your new website will be a powerful business tool, but it's most
             effective when part of your broader marketing and sales strategy.

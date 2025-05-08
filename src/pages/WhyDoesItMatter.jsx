@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import key from '/assets/key.png';
 import computer from '/assets/computer.png';
 import home from '/assets/home.png';
 import clock from '/assets/clock.png';
@@ -23,10 +22,10 @@ export const WhyDoesItMatter = () => {
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="space-y-4 fade-text">
-          <p className="text-blue-600 text-lg font-mono uppercase">
+          <p className="text-[#0F8DCD] text-lg font-mono uppercase">
             When does it matter ?
           </p>
-          <h2 className="text-2xl md:text-4xl font-bold text-black leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
             The Critical Decision Moments
           </h2>
         </div>
@@ -41,10 +40,15 @@ export const WhyDoesItMatter = () => {
                 alt="Annual Planning Cycles"
                 src={computer}
               />
-              <div className="font-bold text-2xl">Annual Planning Cycles</div>
+              <div className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                Annual Planning Cycles
+              </div>
             </div>
             <div className="h-[1px] bg-gray-300 w-32 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p
+              className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+            >
               Airlines and operators conduct service reviews during Q4 and Q1.
               Your digital presence influences whether you make the shortlist.
             </p>
@@ -53,10 +57,15 @@ export const WhyDoesItMatter = () => {
           <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col gap-3">
             <div className="flex items-center gap-4">
               <img className="w-16 h-16" alt="Emergency Response" src={clock} />
-              <div className="font-bold text-2xl">Emergency Response</div>
+              <div className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                Emergency Response
+              </div>
             </div>
             <div className="h-[1px] bg-gray-300 w-32 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p
+              className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+            >
               When contingency plans activate or a provider fails, operators
               make rapid decisions based on immediately available information.
             </p>
@@ -70,10 +79,15 @@ export const WhyDoesItMatter = () => {
                 alt="Network Expansion"
                 src={document}
               />
-              <div className="font-bold text-2xl">Network Expansion</div>
+              <div className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                Network Expansion
+              </div>
             </div>
             <div className="h-[1px] bg-gray-300 w-32 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p
+              className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+            >
               New routes and destinations trigger research phases where
               operators evaluate ground handling options across your service
               regions.
@@ -83,10 +97,15 @@ export const WhyDoesItMatter = () => {
           <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col gap-3">
             <div className="flex items-center gap-4">
               <img className="w-16 h-16" alt="Digital Evaluation" src={home} />
-              <div className="font-bold text-2xl">Digital Evaluation</div>
+              <div className="font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                Digital Evaluation
+              </div>
             </div>
             <div className="h-[1px] bg-gray-300 w-32 my-4"></div>
-            <p className="text-black font-inter-regular text-xl">
+            <p
+              className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+"
+            >
               Aviation clients increasingly use digital presence as a proxy for
               operational professionalism and service capability.
             </p>
@@ -96,13 +115,20 @@ export const WhyDoesItMatter = () => {
           <div className="flex items-center gap-4">
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
-              className="text-2xl text-[#0F8DCD]"
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ text-[#0F8DCD]"
             />
-            <div className="text-black font-bold text-2xl">
+            <div
+              className="text-black font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl
+"
+            >
               Critical moments
             </div>
           </div>
-          <p className="text-black font-be-vietnam-regular text-xl">
+          <p
+            className="text-black font-be-vietnam-regular text-xs md:text-sm lg:text-md xl:text-lg
+"
+          >
             Decision-makers typically start searching when a new route opens,
             when a VIP trip needs urgent support, when an existing partner
             fails, or when a yearly RFQ (Request for Quotation) cycle begins.

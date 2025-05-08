@@ -40,14 +40,18 @@ export const MarketAnalysis = () => {
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Section Header */}
         <div className="flex flex-col gap-4 fade-in">
-          <h4 className="text-blue-600 text-xl font-mono">MARKET ANALYSIS</h4>
-          <h2 className="text-black text-4xl sm:text-5xl font-bold">
+          <h4 className="text-[#0F8DCD] text-xl font-mono">MARKET ANALYSIS</h4>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
             Research Findings
           </h2>
         </div>
 
         {/* Description */}
-        <p className="text-black text-xl md:text-2xl max-w-5xl fade-in">
+        <p
+          className="text-black text-sm md:text-base lg:text-lg xl:text-xl
+
+ fade-in"
+        >
           Analysis of the current aviation service landscape reveals
           opportunities for <br /> digital improvement
         </p>
@@ -82,10 +86,18 @@ export const MarketAnalysis = () => {
                         : 'bg-orange-500'
                   } h-1.5 w-16 rounded-full transition-all duration-300 group-hover:w-24`}
                 />
-                <h3 className="text-2xl font-bold text-gray-900">
+                <h3
+                  className="text-xl md:text-2xl lg:text-3xl xl:text-4xl
+ font-bold text-gray-900"
+                >
                   {card.title}
                 </h3>
-                <p className="text-lg text-gray-800">{card.text}</p>
+                <p
+                  className="text-sm md:text-base lg:text-lg xl:text-xl
+ text-gray-800"
+                >
+                  {card.text}
+                </p>
               </div>
             </div>
           ))}
