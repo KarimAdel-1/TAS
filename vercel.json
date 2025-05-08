@@ -1,14 +1,15 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static"
       }
+    ],
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
+    ],
+    "env": {
+      "NODE_ENV": "production"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
   }
-}
+  
