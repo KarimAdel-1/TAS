@@ -1,15 +1,17 @@
 {
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static"
-      }
-    ],
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ],
-    "env": {
-      "NODE_ENV": "production"
+  "builds": [
+    {
+      "src": "build/**/*",
+      "use": "@vercel/static"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
   }
-  
+}
