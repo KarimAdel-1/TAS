@@ -68,7 +68,7 @@ export function ExecutionPath() {
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Header */}
-        <div className="flex flex-col gap-4 fade-in justify-center items-center">
+        <div className="flex flex-col gap-4 fade-in justify-center items-center text-center">
           <h4 className="text-[#0F8DCD] text-lg  font-mono uppercase">
             Execution Path
           </h4>
