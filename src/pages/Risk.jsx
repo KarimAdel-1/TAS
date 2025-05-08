@@ -141,16 +141,29 @@ font-mono"
                     'Trust & Credibility Gap',
                     'Competitive Disadvantage',
                     'Lost Business Value',
-                  ].map((step, index) => (
-                    <div key={step} className="flex items-center gap-4">
-                      <div className="p-5 w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm md:text-base lg:text-lg xl:text-xl ">
-                        {index + 1}
+                  ].map((step, index) => {
+                    const colorConfigs = [
+                      { bg: 'bg-[#FEF9E6]', text: 'text-[#F8C51D]' },
+                      { bg: 'bg-[#FFE4D2]', text: 'text-[#FF8F17]' },
+                      { bg: 'bg-[#FDABA4]', text: 'text-[#EF4345]' },
+                      { bg: 'bg-[#EF4345]', text: 'text-white' },
+                    ];
+
+                    const { bg, text } = colorConfigs[index];
+
+                    return (
+                      <div key={step} className="flex items-center gap-4">
+                        <div
+                          className={`p-5 w-10 h-10 rounded-full ${bg} ${text} flex items-center justify-center text-sm md:text-base lg:text-lg xl:text-xl`}
+                        >
+                          {index + 1}
+                        </div>
+                        <div className="text-sm md:text-base lg:text-lg xl:text-xl bg-gray-100 px-4 py-1 w-full">
+                          <span>{step}</span>
+                        </div>
                       </div>
-                      <div className="text-sm md:text-base lg:text-lg xl:text-xl bg-gray-100 px-4 py-1 w-full ">
-                        <span>{step}</span>
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
