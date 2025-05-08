@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import quote from '/assets/quote.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowTrendDown } from '@fortawesome/free-solid-svg-icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,14 +45,15 @@ export const Risk = () => {
 
   return (
     <section
-      className="flex flex-col items-center justify-center py-24 px-4 h-full"
+      id="why-it-matters"
+      className="w-full py-24 px-4 sm:px-10 md:px-20 xl:px-36 h-full"
       ref={containerRef}
     >
-      <div className="w-full max-w-7xl flex flex-col gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col gap-12">
         {/* Header */}
         <div className="space-y-4 fade-text">
           <p className="text-blue-600 text-lg font-mono uppercase">
-            Why it matters for TAS
+            Why It Matters
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
             What’s At Risk ?
@@ -58,13 +61,6 @@ export const Risk = () => {
         </div>
 
         <div className="flex flex-col gap-10">
-          <div className="bg-blue-600 px-12 py-6 rounded-xl">
-            <p className="text-white text-xl sm:text-xl lg:text-3xl font-bold fade-text">
-              "You're losing clients silently — not because of your service, but
-              because your digital presence doesn't build trust fast enough.
-              You're seen as a vendor, not a strategic partner."
-            </p>
-          </div>
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Left Column */}
             <div className="bg-red-100/30 border border-red-200 rounded-xl shadow p-6 flex flex-col gap-10 w-full fade-card">
@@ -112,7 +108,7 @@ export const Risk = () => {
                 </h3>
                 <div className="w-full h-[1px] bg-gray-200 mb-4" />
                 <p className="text-gray-600 font-mono text-sm sm:text-base">
-                  This perception gap has real business consequences. Potential
+                  This perception gap has real business consequences, potential
                   clients might choose competitors for RFQs, new route planning
                   excludes TAS from consideration, and pricing leverage is
                   diminished when you're not positioned as a premium service
@@ -125,20 +121,40 @@ export const Risk = () => {
                   Impact flow
                 </h4>
                 <div className="flex flex-col gap-6">
-                  {[1, 2, 3, 4].map((step) => (
+                  {[
+                    'Website Weakness',
+                    'Trust & Credibility Gap',
+                    'Competitive Disadvantage',
+                    'Lost Business Value',
+                  ].map((step, index) => (
                     <div key={step} className="flex items-center gap-4">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-semibold">
-                        {step}
+                        {index + 1}
                       </div>
-                      <div className="text-base sm:text-lg font-semibold">
-                        Title of Something
+                      <div className="text-base sm:text-lg font-semibold bg-gray-100 px-4 py-1 w-full ">
+                        <span>{step}</span>
                       </div>
-                      <div className="flex-1 h-[30px] bg-gray-100 ml-4" />
                     </div>
                   ))}
                 </div>
               </div>
             </div>
+          </div>
+          <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-10 flex flex-col gap-6">
+            <div className="flex items-center gap-4">
+              <FontAwesomeIcon
+                icon={faArrowTrendDown}
+                className="text-2xl text-[#0F8DCD]"
+              />
+              <div className="text-black font-bold text-2xl">
+                You're losing clients silently
+              </div>
+            </div>
+            <p className="text-black font-be-vietnam-regular text-xl">
+              Not because of your service, but because your digital presence
+              doesn't build trust fast enough. You're seen as a vendor, not a
+              strategic partner.
+            </p>
           </div>
         </div>
       </div>

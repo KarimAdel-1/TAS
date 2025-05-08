@@ -33,6 +33,7 @@ export const MarketAnalysis = () => {
 
   return (
     <section
+      id="market-analysis"
       ref={sectionRef}
       className="w-full py-24 px-4 sm:px-10 md:px-20 xl:px-36 h-full"
     >

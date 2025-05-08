@@ -1,15 +1,39 @@
-import React, { useRef, useEffect } from 'react';
-import { TableRow } from '../components/TableRow';
+import React, { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
+
+const webflowFeatures = [
+  { label: 'Upfront Cost', value: 'Cheaper' },
+  { label: 'Time to Launch', value: 'Faster' },
+  { label: 'Long-Term Cost', value: 'High ongoing cost' },
+  { label: 'Ownership', value: 'Platform lock-in' },
+  { label: 'CMS', value: 'Webflow CMS' },
+  { label: 'Flexibility', value: 'Limited' },
+  { label: 'Scalability', value: 'Medium' },
+  { label: 'Security', value: 'Webflow-managed' },
+];
+
+const customCodeFeatures = [
+  { label: 'Upfront Cost', value: 'Premium' },
+  { label: 'Time to Launch', value: 'Takes longer' },
+  { label: 'Long-Term Cost', value: 'Low ongoing cost' },
+  { label: 'Ownership', value: 'Full ownership' },
+  { label: 'CMS', value: 'Fully tailored CMS' },
+  { label: 'Flexibility', value: 'Unlimited' },
+  { label: 'Scalability', value: 'High' },
+  { label: 'Security', value: 'Full Responsibility' },
+];
 
 export function ExecutionPath() {
   const sectionRef = useRef(null);
+  const [activeTab, setActiveTab] = useState('webflow');
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(
+    () => {
       gsap.utils.toArray('.fade-in').forEach((el) => {
         gsap.fromTo(
           el,
@@ -27,19 +51,22 @@ export function ExecutionPath() {
           }
         );
       });
-    }, sectionRef);
+    },
+    { scope: sectionRef }
+  );
 
-    return () => ctx.revert();
-  }, []);
+  const features =
+    activeTab === 'webflow' ? webflowFeatures : customCodeFeatures;
 
   return (
     <section
+      id="execution-paths"
       ref={sectionRef}
       className="w-full py-24 px-4 sm:px-10 md:px-20 xl:px-36 bg-white"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Header */}
-        <div className="flex flex-col gap-4 fade-in">
+        <div className="flex flex-col gap-4 fade-in justify-center items-center">
           <h4 className="text-blue-600 text-xl font-mono uppercase">
             Execution Path
           </h4>
@@ -48,71 +75,71 @@ export function ExecutionPath() {
           </h2>
         </div>
 
-        {/* Table Section */}
-        <div className="w-full overflow-x-auto fade-in">
-          <div className="w-[1200px] bg-white rounded-3xl outline-1 outline-offset-[-1px] outline-Fedral-blue-950 flex flex-col justify-start items-start overflow-hidden">
-            <TableRow
-              factor="Factor"
-              webflow={
-                <>
-                  <img
-                    src="https://placehold.co/32x32"
-                    className="w-8 h-8 mr-2"
-                  />
-                  <span className="text-Fedral-blue-950 font-bold">
-                    Webflow
-                  </span>
-                </>
-              }
-              customCode={
-                <>
-                  <div className="w-7 h-7 bg-Orange-950 mr-2" />
-                  <span className="text-Fedral-blue-950 font-bold">
-                    Custom Code
-                  </span>
-                </>
-              }
-              isHeader
-            />
+        {/* Tabs */}
+        <div
+          className={`relative flex gap-4 fade-in justify-center px-2 py-2 rounded-full overflow-hidden w-fit mx-auto
+    border-2 ${
+      activeTab === 'custom'
+        ? 'border-[#F26430] bg-orange-50'
+        : 'border-[#010F65] bg-white'
+    }`}
+        >
+          {/* Sliding background indicator */}
+          <div
+            className={`absolute top-0 left-0 h-full w-1/2 rounded-full transition-transform duration-300 ease-in-out ${
+              activeTab === 'custom'
+                ? 'translate-x-full bg-[#F26430]'
+                : 'bg-[#010F65]'
+            }`}
+          />
+          <button
+            onClick={() => setActiveTab('webflow')}
+            className={`font-semibold relative z-10 px-10 py-2 transition-colors duration-200 ${
+              activeTab === 'webflow' ? 'text-white' : 'text-gray-500'
+            }`}
+          >
+            Webflow
+          </button>
+          <button
+            onClick={() => setActiveTab('custom')}
+            className={`font-semibold relative z-10 px-6 py-2 transition-colors duration-200 ${
+              activeTab === 'custom' ? 'text-white' : 'text-gray-500'
+            }`}
+          >
+            Custom Code
+          </button>
+        </div>
 
-            <TableRow
-              factor="Upfront Cost"
-              webflow={<span className="text-sky-600">Cheaper</span>}
-              customCode={<span className="text-sky-blue-600">Premium</span>}
-            />
+        {/* Feature List */}
+        <div
+          className={`flex flex-col gap-6 fade-in p-[32px] rounded-4xl shadow-md border
+    ${
+      activeTab === 'custom'
+        ? 'border-[#F26430] bg-orange-50'
+        : 'border-[#0F8DCD] bg-[#E2F1FC]'
+    }`}
+        >
+          {features.map(({ label, value }, idx) => {
+            const isLast = idx === features.length - 1;
+            const borderColor =
+              activeTab === 'custom' ? 'border-[#f7a97a]' : 'border-[#7ac1f3]';
 
-            <TableRow
-              factor="Time to Launch"
-              webflow={<span className="text-green-700">Faster</span>}
-              customCode={<span className="text-red-600">Takes longer</span>}
-            />
-
-            <TableRow
-              factor="Long-Term Cost"
-              webflow={<span className="text-red-600">High ongoing cost</span>}
-              customCode={
-                <span className="text-green-700">Low ongoing cost</span>
-              }
-            />
-
-            <TableRow
-              factor="Ownership"
-              webflow={<span className="text-amber-500">Platform lock-in</span>}
-              customCode={
-                <span className="text-green-700">Full ownership</span>
-              }
-            />
-
-            <TableRow
-              factor="CMS"
-              webflow={<span className="text-amber-500">Webflow CMS</span>}
-              customCode={
-                <span className="text-green-700">Fully tailored CMS</span>
-              }
-            />
-
-            {/* Add more ExecutionRow entries as needed */}
-          </div>
+            return (
+              <div
+                key={idx}
+                className={`flex justify-between py-3 ${
+                  !isLast ? `border-b ${borderColor}` : ''
+                }`}
+              >
+                <span className="font-semibold text-base md:text-xl text-gray-700">
+                  {label}
+                </span>
+                <span className="font-mono text-base md:text-xl uppercase text-black/50">
+                  {value}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

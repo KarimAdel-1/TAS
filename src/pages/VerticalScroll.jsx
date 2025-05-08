@@ -6,7 +6,6 @@ import { Risk } from './Risk';
 import { RiskTwo } from './RiskTwo';
 import { RiskThree } from './RiskThree';
 import { RiskFour } from './RiskFour';
-import NavBar from '../components/Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 

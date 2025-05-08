@@ -7,6 +7,8 @@ import sales from '/assets/sales.png';
 import sheild from '/assets/sheild.png';
 import team from '/assets/team.png';
 import blitz from '/assets/blitz.png';
+import { faRankingStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,12 +75,16 @@ export const RiskTwo = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 px-4 md:px-16 lg:px-32 h-full">
+    <section
+      id="when-does-it-matter"
+      ref={sectionRef}
+      className="w-full py-24 px-4 sm:px-10 md:px-20 xl:px-36 h-full"
+    >
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="space-y-4 fade-text">
           <p className="text-blue-600 text-lg font-mono uppercase">
-            Why it matters for TAS
+            WEbsite Delivery
           </p>
           <h2 className="text-2xl md:text-4xl font-bold text-black leading-tight">
             What A Strategic Website Actually Delivers
@@ -102,7 +108,7 @@ export const RiskTwo = () => {
               key={index}
               className="fade-card bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden"
             >
-              <div className="bg-blue-600 flex items-center justify-center h-52 relative">
+              <div className="bg-[#0F8DCD] flex items-center justify-center h-52 relative">
                 <img
                   src={card.icon}
                   alt={`Icon representing ${card.title}`}
@@ -116,6 +122,22 @@ export const RiskTwo = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-10 flex flex-col gap-6">
+          <div className="flex items-center gap-4">
+            <FontAwesomeIcon
+              icon={faRankingStar}
+              className="text-2xl text-[#0F8DCD]"
+            />
+            <div className="text-black font-bold text-2xl">
+              A proper site is not a brochure
+            </div>
+          </div>
+          <p className="text-black font-be-vietnam-regular text-xl">
+            it's your sales team, operations showcase, and credibility engine.
+            It works before the phone rings. It proves capability, builds trust,
+            and triggers action: Request Handling. Get a Permit. Contact Ops.
+          </p>
         </div>
       </div>
     </section>

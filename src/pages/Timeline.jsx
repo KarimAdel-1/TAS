@@ -60,6 +60,7 @@ function Timeline() {
 
   return (
     <section
+      id="process-and-timeline"
       ref={sectionRef}
       className="w-full py-24 px-4 sm:px-10 md:px-20 xl:px-36 h-full bg-white"
     >
@@ -81,11 +82,11 @@ function Timeline() {
               key={index}
               className="fade-in p-8 rounded-3xl border border-blue-200 bg-white shadow-md flex flex-col gap-6"
             >
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-black">
+              <div className="flex items-center justify-between gap-2 md:gap-4">
+                <h3 className="text-xl md:text-3xl font-bold text-black">
                   {step.title}
                 </h3>
-                <span className="px-6 py-2 rounded-full bg-orange-100 text-orange-900 text-lg">
+                <span className="p-1 md:px-6 md:py-2 rounded-2xl md:rounded-full bg-orange-100 text-orange-900 text-lg">
                   {step.duration}
                 </span>
               </div>
@@ -96,11 +97,11 @@ function Timeline() {
 
         {/* Total Timeline */}
         <div className="fade-in p-8 rounded-3xl border border-blue-600 bg-blue-100 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-black flex items-center gap-3">
+          <h3 className="text-xl md:text-3xl font-bold text-black flex items-center gap-3">
             <div className="w-4 h-4 bg-blue-600 rounded-full" />
             Total Estimated Timeline
           </h3>
-          <p className="text-2xl font-black text-black">
+          <p className="text-xl font-black text-black">
             10–16 weeks{' '}
             <span className="font-normal">
               from project kickoff to full website launch, with regular

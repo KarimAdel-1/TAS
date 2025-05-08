@@ -1,16 +1,18 @@
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useEffect, useRef, useState } from 'react';
 
+gsap.registerPlugin(ScrollToPlugin);
+
 const navItems = [
-  'About',
-  'Contact',
-  'Contact',
-  'Contact',
-  'Contact',
-  'Contact',
-  'Contact',
-  'Contact',
-  'Contact',
+  'Company Overview',
+  'Market Analysis',
+  'Why it Matters?',
+  'When does it Matter?',
+  'ROI',
+  'Process & Timeline',
+  'What to Expect?',
+  'Execution Paths',
 ];
 
 const NavBar = () => {
@@ -52,6 +54,26 @@ const NavBar = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
+  const scrollToSection = (e, target) => {
+    e.preventDefault();
+    gsap.to(window, {
+      duration: 0.6,
+      scrollTo: {
+        y: `#${target}`,
+        offsetY: 80,
+      },
+      ease: 'power2.out',
+    });
+    closeMobileMenu();
+  };
+
+  const formatId = (str) =>
+    str
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/&/g, 'and') // Replace & with 'and'
+      .replace(/[^\w-]/g, ''); // Remove all non-word characters except hyphens
+
   return (
     <>
       {/* Backdrop */}
@@ -72,37 +94,32 @@ const NavBar = () => {
             {/* Logo */}
             <div className="flex items-center gap-3">
               <img src="/assets/logo.png" alt="logo" className="w-16 md:w-18" />
-              <span className="hidden md:block w-px h-6 bg-white" />
-              <div className="hidden md:flex flex-col">
-                <h1 className="text-white text-xs font-bold">
-                  Accelerating Ideas,
-                </h1>
-                <p className="text-white text-xs font-bold">
-                  Elevating Brands.
-                </p>
-              </div>
             </div>
 
             {/* Desktop Nav */}
-            <div className="hidden xl:flex gap-10">
-              {navItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={`#${item.toLowerCase()}`}
-                  className="relative text-xs uppercase text-blue-100 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left dark:after:bg-blue-500"
-                >
-                  {item}
-                </a>
-              ))}
+            <div className="hidden 2xl:flex gap-10">
+              {navItems.map((item, idx) => {
+                const targetId = formatId(item);
+                return (
+                  <a
+                    key={idx}
+                    href={`#${targetId}`}
+                    onClick={(e) => scrollToSection(e, targetId)}
+                    className="relative text-xs uppercase text-white after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left dark:after:bg-blue-500"
+                  >
+                    {item}
+                  </a>
+                );
+              })}
             </div>
 
             {/* Burger Icon */}
             <button
               onClick={toggleMobileMenu}
-              className="xl:hidden relative w-6 h-6 z-50 flex flex-col justify-between items-center"
+              className="2xl:hidden relative w-6 h-6 z-50 flex flex-col justify-between items-center"
             >
               <span
-                className={`w-full h-1 bg-white rounded transition-transform duration-300 ${
+                className={`w-full h-1 bg-white rounded transition-transform duration-300  ${
                   isMobileMenuOpen ? 'rotate-45 translate-y-3' : ''
                 }`}
               />
@@ -122,22 +139,28 @@ const NavBar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`mt-4 md:hidden absolute top-full left-0 w-full bg-[#07080de7] rounded-4xl py-8 flex flex-col items-center backdrop-blur-sm transform transition-all duration-300 ${
+          className={`h-[750px] justify-between mt-4 2xl:hidden absolute top-full left-0 w-full bg-[#07080de7] rounded-4xl py-8 flex flex-col items-start px-6 backdrop-blur-sm transform transition-all duration-300 ${
             isMobileMenuOpen
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 -translate-y-4 pointer-events-none'
           }`}
         >
-          {navItems.map((item, idx) => (
-            <a
-              key={idx}
-              href={`#${item.toLowerCase()}`}
-              className="text-white py-3 text-lg font-medium"
-              onClick={closeMobileMenu}
-            >
-              {item}
-            </a>
-          ))}
+          <span className="border-b-2 w-full py-4 border-white/10 text-white text-xl font-bold">
+            Table of Content
+          </span>
+          {navItems.map((item, idx) => {
+            const targetId = formatId(item);
+            return (
+              <a
+                key={idx}
+                href={`#${targetId}`}
+                onClick={(e) => scrollToSection(e, targetId)}
+                className="text-white py-3 text-lg font-medium"
+              >
+                {item}
+              </a>
+            );
+          })}
         </div>
       </div>
     </>

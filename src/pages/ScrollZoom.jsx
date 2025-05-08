@@ -1,17 +1,19 @@
-import clouds from '/assets/clouds.mp4';
+import plane from '/assets/plane.mp4';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MarketAnalysis } from './MarketAnalysis';
 import { Risk } from './Risk';
 import { RiskTwo } from './RiskTwo';
-import { RiskThree } from './RiskThree';
-import { RiskFour } from './RiskFour';
+import { WhyDoesItMatter } from './WhyDoesItMatter';
+import { ROI } from './ROI';
 import Lottie from 'lottie-react';
 import scrollAnimation from '../lottieAnimation/scrollAnimationIcon.json';
 import Timeline from './Timeline';
 import WhatToExpect from './WhatToExpect';
 import ExecutionPath from './ExecutionPath';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,8 +67,8 @@ const ScrollZoom = () => {
           lottieRef.current,
           {
             opacity: 0,
-            scale: 0.2,
-            duration: 1,
+            // scale: 0.2,
+            duration: 2,
             ease: 'power1.out',
           },
           0
@@ -85,65 +87,98 @@ const ScrollZoom = () => {
           className="relative w-full h-screen will-change-transform"
         >
           <video
-            src={clouds}
+            src={plane}
             autoPlay
             muted
             loop
             playsInline
             className="w-full h-full object-cover"
           />
+
+          {/* <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+            <div
+              ref={textRef}
+              className="flex flex-col items-center justify-center gap-4 w-11/12 md:w-2/3 lg:w-1/2"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold">
+                Transforming TAS's Digital Presence
+              </h1>
+              <p className="text-xl md:text-3xl font-bold">
+                Elevating Aviation Ground Handling Services with a Modern
+                Website
+              </p>
+            </div>
+          </div> */}
           <div
+            id="company-overview"
             ref={textRef}
-            className="absolute w-3/4 md:w-2/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-white text-4xl font-bold opacity-0 will-change-transform"
+            className="absolute w-11/12 md:w-4/5 lg:w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-4xl opacity-0 will-change-transform px-4 md:px-0"
           >
-            <div className="flex flex-col items-start justify-center h-full gap-3 md:gap-6">
-              <img src="/assets/logo-tas.png" className="h-10 md:h-18" />
+            <div className="flex flex-col items-start justify-center h-fit gap-4 md:gap-6">
+              <img
+                src="/assets/logoTasBlue.png"
+                className="h-16 md:h-[4.5rem]"
+                alt="Company Logo"
+              />
               <div className="flex flex-col gap-1">
-                <p className="text-[12px] md:text-lg text-blue-600 font-mono uppercase">
+                <p className="text-[11px] md:text-sm text-[#0F8DCD] font-mono uppercase">
                   COMPANY OVERVIEW
                 </p>
-                <p className="text-[16px] font-bold md:text-5xl">
-                  Tiger Aviation Service
+                <p className="text-xl md:text-4xl font-bold text-black">
+                  Tiger Aviation Services
                 </p>
               </div>
-              <p className="text-[14px] md:text-2xl">
-                Tiger Aviation services has established itself as one of Egypt's
+              <p className="text-sm md:text-xl text-black">
+                Tiger Aviation Services has established itself as one of Egypt's
                 premier ground handling providers, delivering consistent quality
                 and safety.
               </p>
             </div>
 
-            <div className="flex w-full justify-center items-center mt-4">
-              <div className="bg-blue-600 w-1/2 h-[412px] rounded-3xl hidden md:flex flex-col gap-4 px-10 py-10">
-                <p className="text-white text-lg border-b-3 border-gray-300 py-4 border-dotted font-mono uppercase">
-                  HISTORY
-                </p>
-                <p className="text-white text-lg border-b-3 border-gray-300 py-4 border-dotted font-mono uppercase">
-                  FULL-SERVICE
-                </p>
-                <p className="text-white text-lg border-b-3 border-gray-300 py-4 border-dotted font-mono uppercase">
-                  OPERATING LOCATIONS
-                </p>
-                <p className="text-white text-lg py-4 font-mono uppercase">
-                  CERTIFICATIONS
-                </p>
+            <div className="flex flex-col md:flex-row w-full justify-center items-stretch mt-6 gap-2">
+              <div className="bg-[#010F65] md:w-1/3 hidden md:flex flex-col gap-4 px-4 py-6 rounded-tl-2xl rounded-bl-2xl ">
+                {[
+                  'HISTORY',
+                  'FULL-SERVICE',
+                  'OPERATING LOCATIONS',
+                  'CERTIFICATIONS',
+                ].map((item, idx) => (
+                  <p
+                    key={idx}
+                    className={` md:text-sm tracking-widest text-white text-sm py-4 font-mono uppercase ${
+                      idx < 3 ? 'border-b-3 border-gray-300 border-dotted' : ''
+                    }`}
+                  >
+                    {item}
+                  </p>
+                ))}
               </div>
 
-              <div className="h-[370px] border-2 border-dotted border-gray-50 hidden md:flex"></div>
-
-              <div className="bg-white w-full h-full md:h-[412px] rounded-3xl flex flex-col gap-4 px-3 py-3 md:px-10 md:py-10">
-                <p className="text-black/60 text-[13px] md:text-lg border-b-2 md:border-b-3 border-gray-300 py-3 md:py-4 border-dotted font-mono uppercase">
-                  35+ years of industry experience
-                </p>
-                <p className="text-black/60 text-[13px] md:text-lg border-b-2 md:border-b-3 border-gray-300 py-3 md:py-4 border-dotted font-mono uppercase">
-                  Passenger, Cargo, VIP, Catering, Travel
-                </p>
-                <p className="text-black/60 text-[13px] md:text-lg border-b-2 md:border-b-3 border-gray-300 py-3 md:py-4 border-dotted font-mono uppercase">
-                  11+ airports across Egypt + UAE branch
-                </p>
-                <p className="text-black/60 text-[13px] md:text-lg py-3 md:py-4 border-dotted font-mono uppercase">
-                  ISAGO-certified & NBAA member
-                </p>
+              <div className="bg-white w-full md:w-full flex flex-col gap-4 px-4 py-6 rounded-2xl md:rounded-br-2xl md:rounded-tr-2xl md:rounded-none">
+                {[
+                  '35+ years of industry experience',
+                  'Passenger, Cargo, VIP, Catering, Travel',
+                  '11+ airports across Egypt + UAE branch',
+                  'ISAGO-certified & NBAA member',
+                ].map((desc, idx) => (
+                  <div
+                    className={`flex items-center gap-2 py-4  ${
+                      idx < 3 ? 'border-b-3 border-gray-300 border-dotted' : ''
+                    } `}
+                    key={idx}
+                  >
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="text-[#0F8DCD] text-lg md:text-2xl"
+                    />
+                    <p
+                      // key={idx}
+                      className={`text-black/60 text-sm md:text-sm tracking-widest font-mono uppercase`}
+                    >
+                      {desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -153,19 +188,19 @@ const ScrollZoom = () => {
         <MarketAnalysis />
         <Risk />
         <RiskTwo />
-        <RiskThree />
-        <RiskFour />
+        <WhyDoesItMatter />
+        <ROI />
         <Timeline />
         <WhatToExpect />
         <ExecutionPath />
 
         {/* <section className="w-full h-screen bg-gradient-to-b from-blue-500 to-blue-700"></section> */}
-        <section className="w-full h-screen bg-[url('/assets/cloudBackground.png')] bg-no-repeat bg-cover bg-center flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center gap-4 w-11/12 md:w-2/3 lg:w-1/2 text-center">
-            <p className="text-blue-950 text-4xl md:text-6xl font-bold">
+        <section className="w-full h-screen bg-[url('/assets/cloudBackground.png')] bg-no-repeat bg-cover bg-center flex items-center justify-center w-full py-24 px-4 sm:px-10 md:px-20 xl:px-36 h-full">
+          <div className="flex flex-col items-center justify-center text-center gap-4">
+            <p className="text-[#010F65] text-4xl md:text-[78px] font-bold">
               Ready to Transform TAS's Digital Presence?
             </p>
-            <p className="text-blue-800 text-xl md:text-3xl font-bold">
+            <p className="text-[#010F65] text-[30] md:text-[38px]">
               Let's build a website that truly represents TAS's leadership
               position in aviation ground handling services.
             </p>
