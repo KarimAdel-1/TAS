@@ -146,7 +146,7 @@ function App() {
 
           {/* Mobile Menu */}
           <div
-            className={`h-[750px] justify-between mt-4 2xl:hidden absolute top-full left-0 w-full bg-[#07080de7] rounded-4xl py-8 flex flex-col items-start px-6 backdrop-blur-sm transform transition-all duration-300 ${
+            className={`h-[650px] md:h-[750px] justify-between mt-4 2xl:hidden absolute top-full left-0 w-full bg-[#07080de7] rounded-4xl py-8 flex flex-col items-start px-6 backdrop-blur-sm transform transition-all duration-300 ${
               isMobileMenuOpen
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 -translate-y-4 pointer-events-none'
