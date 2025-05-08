@@ -116,10 +116,7 @@ export const Risk = () => {
                   The Business Impact
                 </h3>
                 <div className="w-full h-[1px] bg-gray-200 mb-4" />
-                <p
-                  className="text-gray-600 text-sm md:text-base lg:text-lg xl:text-xl
-font-mono"
-                >
+                <p className="text-gray-600 text-sm md:text-base lg:text-lg xl:text-xl">
                   This perception gap has real business consequences, potential
                   clients might choose competitors for RFQs, new route planning
                   excludes TAS from consideration, and pricing leverage is

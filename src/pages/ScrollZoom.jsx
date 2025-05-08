@@ -17,7 +17,7 @@ import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollZoom = () => {
+const ScrollZoom = ({ onImageLoad }) => {
   const wrapperRef = useRef(null);
   const imageRef = useRef(null);
   const heroRef = useRef(null);
@@ -227,6 +227,7 @@ const ScrollZoom = () => {
           src="assets/windowBackground.png"
           alt="image"
           className="w-full h-full object-cover will-change-transform"
+          onLoad={onImageLoad}
         />
         <div
           ref={lottieRef}
