@@ -12,6 +12,7 @@ import scrollAnimation from '../lottieAnimation/scrollAnimationIcon.json';
 import Timeline from './Timeline';
 import WhatToExpect from './WhatToExpect';
 import ExecutionPath from './ExecutionPath';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 
