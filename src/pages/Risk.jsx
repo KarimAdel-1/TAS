@@ -143,7 +143,7 @@ font-mono"
                     'Lost Business Value',
                   ].map((step, index) => (
                     <div key={step} className="flex items-center gap-4">
-                      <div className="p-5 w-12 h-12 sm:w-10 sm:h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-semibold">
+                      <div className="p-5 w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm md:text-base lg:text-lg xl:text-xl ">
                         {index + 1}
                       </div>
                       <div className="text-sm md:text-base lg:text-lg xl:text-xl bg-gray-100 px-4 py-1 w-full ">
@@ -155,7 +155,7 @@ font-mono"
               </div>
             </div>
           </div>
-          <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-10 flex flex-col gap-6">
+          <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-6 md:p-10 flex flex-col gap-6">
             <div className="flex items-center gap-4">
               <FontAwesomeIcon
                 icon={faArrowTrendDown}

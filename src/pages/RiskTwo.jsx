@@ -123,7 +123,7 @@ export const RiskTwo = () => {
             </div>
           ))}
         </div>
-        <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-10 flex flex-col gap-6">
+        <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl  p-6 md:p-10 flex flex-col gap-6">
           <div className="flex items-center gap-4">
             <FontAwesomeIcon
               icon={faRankingStar}

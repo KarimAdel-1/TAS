@@ -153,7 +153,7 @@ function WhatToExpect() {
         </div>
 
         {/* Footer Note */}
-        <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-10 flex flex-col gap-6">
+        <div className="bg-[#E2F1FC] border border-[#0F8DCD] rounded-xl p-6 md:p-10 flex flex-col gap-6">
           <h3 className="text-black font-bold flex items-center gap-4">
             <FontAwesomeIcon
               icon={faClock}
