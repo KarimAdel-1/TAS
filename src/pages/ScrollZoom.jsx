@@ -109,7 +109,7 @@ const ScrollZoom = () => {
               </p>
             </div>
           </div> */}
-          <div
+          <section
             id="company-overview"
             ref={textRef}
             className="absolute w-11/12 md:w-4/5 lg:w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-4xl opacity-0 will-change-transform px-4 md:px-0"
@@ -136,7 +136,7 @@ const ScrollZoom = () => {
             </div>
 
             <div className="flex flex-col md:flex-row w-full justify-center items-stretch mt-6 gap-2">
-              <div className="bg-[#010F65] md:w-1/3 hidden md:flex flex-col gap-4 px-4 py-6 rounded-tl-2xl rounded-bl-2xl ">
+              <div className="bg-[#010F65] md:w-1/3 hidden md:flex flex-col gap-4 px-4 py-6 rounded-tl-2xl rounded-bl-2xl">
                 {[
                   'HISTORY',
                   'FULL-SERVICE',
@@ -145,7 +145,7 @@ const ScrollZoom = () => {
                 ].map((item, idx) => (
                   <p
                     key={idx}
-                    className={` md:text-sm tracking-widest text-white text-sm py-4 font-mono uppercase ${
+                    className={`md:text-sm tracking-widest text-white text-sm py-4 font-mono uppercase ${
                       idx < 3 ? 'border-b-3 border-gray-300 border-dotted' : ''
                     }`}
                   >
@@ -162,7 +162,7 @@ const ScrollZoom = () => {
                   'ISAGO-certified & NBAA member',
                 ].map((desc, idx) => (
                   <div
-                    className={`flex items-center gap-2 py-4  ${
+                    className={`flex items-center gap-2 py-4 ${
                       idx < 3 ? 'border-b-3 border-gray-300 border-dotted' : ''
                     } `}
                     key={idx}
@@ -171,17 +171,14 @@ const ScrollZoom = () => {
                       icon={faCircleCheck}
                       className="text-[#0F8DCD] text-lg md:text-2xl"
                     />
-                    <p
-                      // key={idx}
-                      className={`text-black/60 text-sm md:text-sm tracking-widest font-mono uppercase`}
-                    >
+                    <p className="text-black/60 text-sm md:text-sm tracking-widest font-mono uppercase">
                       {desc}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </section>
         </div>
 
         {/* Additional Sections */}
